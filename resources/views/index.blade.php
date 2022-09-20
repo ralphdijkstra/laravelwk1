@@ -11,9 +11,7 @@
 
 <body>
     @include('navbar')
-    <div class="w-full bg-red-500">
-        <img class="object-fill" src="nettorama.jpg" />
-    </div>
+    <img class="" src="nettorama.jpg" />
 </body>
 
 </html>
