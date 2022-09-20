@@ -16,17 +16,17 @@
             <div class="flex justify-between">
                 <div class="flex space-x-7">
                     <div>
-                        <a href="#" class="flex items-center py-4">
+                        <a href="{{ route('index') }}" class="flex items-center py-4">
                             <div class="w-52">
                                 <img class="object-contain" src="logo.png" />
                             </div>
                         </a>
                     </div>
                     <div class="hidden md:flex items-center space-x-5 text-xl">
-                        <a href="" class="py-4 px-2 text-red-500 font-semibold ">Home</a>
-                        <a href="" class="py-4 px-2 text-black font-semibold hover:text-red-500 transition duration-300">Vestigingen</a>
-                        <a href="" class="py-4 px-2 text-black font-semibold hover:text-red-500 transition duration-300">Producten</a>
-                        <a href="" class="py-4 px-2 text-black font-semibold hover:text-red-500 transition duration-300">Vacatures</a>
+                        <a href="{{ route('index') }}" class="py-4 px-2 text-red-500 font-semibold ">Home</a>
+                        <a href="{{ route('vestigingen') }}" class="py-4 px-2 text-black font-semibold hover:text-red-500 transition duration-300">Vestigingen</a>
+                        <a href="{{ route('producten') }}" class="py-4 px-2 text-black font-semibold hover:text-red-500 transition duration-300">Producten</a>
+                        <a href="{{ route('vacatures') }}" class="py-4 px-2 text-black font-semibold hover:text-red-500 transition duration-300">Vacatures</a>
                     </div>
                 </div>
                 <div class="md:hidden flex items-center">
