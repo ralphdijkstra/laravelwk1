@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,12 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
+
 <body>
-    <p class="text-blue-500">
-        Hello world!
-    </p>
+    @include('navbar')
+    <div class="w-full bg-red-500">
+        <img class="object-fill" src="nettorama.jpg" />
+    </div>
 </body>
+
 </html>
