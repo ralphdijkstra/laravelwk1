@@ -20,8 +20,9 @@ Route::get('/', function () {
 Route::get('/vestigingen', function () {
 })->name('vestigingen');
 
-Route::get('/producten', function () {
-})->name('producten');
-
 Route::get('/vacatures', function () {
 })->name('vacatures');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
