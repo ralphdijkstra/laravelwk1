@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pops;
+use App\Models\Series;
 use Illuminate\Http\Request;
 
 class PopsController extends Controller
@@ -17,7 +18,7 @@ class PopsController extends Controller
         $pops = Pops::all();
         return view('pops.index', ['pops' => $pops]);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +26,8 @@ class PopsController extends Controller
      */
     public function create()
     {
-        return view('pops.create');
+        $series = Series::all();
+        return view('pops.create', ['series' => $series]);
     }
 
     /**
@@ -36,10 +38,26 @@ class PopsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'pop_id'=>'required',
-        ]);
-        Pops::create($request->all());
+        // $request->validate([
+        //     'pop_id'=>'required',
+        // ]);
+        $pops = new Pops;
+        $pops->pop_number = $request->input('pop_number');
+        $pops->pop_name = $request->input('pop_name');
+        $pops->variant = $request->input('variant');
+        $pops->category = $request->input('category');
+        $pops->series = $request->input('series');
+        $pops->exclusive = $request->input('exclusive');
+        $pops->limited = $request->input('limited');
+        if(empty($request->input('variant'))){
+            $image = $request->input('pop_number') . " " . $request->input('pop_name') . ".jpg";
+        }
+        else {
+            $image = $request->input('pop_number') . " " . $request->input('pop_name') . " " . $request->input('variant') . ".jpg";
+        }
+        $pops->image = $image;
+        $pops->save();
+        return redirect('/pops');
     }
 
     /**
