@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PopsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
-})->name('index');
-
-Route::get('/vestigingen', function () {
-})->name('vestigingen');
-
-Route::get('/vacatures', function () {
-})->name('vacatures');
-
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+    return view('home');
+})->name('home');
+Route::resource('pops', PopsController::class, [
+    'names' => [
+        'index' => 'pops'
+    ]
+]);
