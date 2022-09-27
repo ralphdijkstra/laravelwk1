@@ -36,6 +36,9 @@ class PopsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'pop_id'=>'required',
+        ]);
         Pops::create($request->all());
     }
 

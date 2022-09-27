@@ -5,6 +5,15 @@
 @section('content')
     <form action="/pops" method="POST">
         @csrf
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div>
             <label for="pop_id">Id:</label>
             <input type="text" id="pop_id" name="pop_id" placeholder="">
