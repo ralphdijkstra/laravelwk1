@@ -1,3 +1,19 @@
+@php
+use App\Http\Controllers\Series;
+if (isset($_COOKIE['selectedSeries'])) {
+    $selectedSerie = $_COOKIE['selectedSeries'];
+}
+@endphp
+@foreach ($series as $serie)
+    @if($serie->name == $selectedSerie)
+    @php
+    $selectedSerieYear = $serie->year;
+    $selectedSerieSort = $serie->id;
+    $selectedSeriePhase = $serie->phase;
+    @endphp
+    @endif
+@endforeach
+
 @extends('layouts.app')
 
 @section('title', 'Pops Create')
@@ -39,9 +55,15 @@
         </div>
         <div>
             <label for="series">Series:</label>
-            <select name="series" id="series">
+            <select name="series" id="series" onchange="selectSeries()">
+                <option value="" selected disabled hidden></option>
                 @foreach ($series as $serie)
+                    @if($serie->name == $selectedSerie){
+                        <option value="{{ $selectedSerie }}" selected>{{ $selectedSerie }}</option>
+                    }
+                    @else
                     <option value="{{ $serie->name }}">{{ $serie->name }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>
@@ -53,7 +75,28 @@
             <label for="limited">Limited:</label>
             <input type="text" id="limited" name="limited" placeholder="1000 pcs">
         </div>
+        <div>
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" readonly value="{{ $selectedSerieYear }}">
+        </div>
+        <div>
+            <label for="sort">Sort:</label>
+            <input type="text" id="sort" name="sort" readonly value="{{ $selectedSerieSort }}">
+        </div>
+        <div>
+            <label for="phase">Phase:</label>
+            <input type="text" id="phase" name="phase" readonly value="{{ $selectedSeriePhase }}">
+        </div>
         <br>
         <button type="submit">Maak nieuwe pop</button>
     </form>
+    <div id="info"></div>
+    <script>
+        function selectSeries() {
+            let series = document.getElementById('series').value;
+            var cookie = "selectedSeries=" + series;
+            document.cookie = cookie;
+            location.reload();
+        }
+    </script>
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pops;
 use App\Models\Series;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class PopsController extends Controller
 {
@@ -55,6 +56,9 @@ class PopsController extends Controller
         else {
             $image = $request->input('pop_number') . " " . $request->input('pop_name') . " " . $request->input('variant') . ".jpg";
         }
+        $pops->sort = $request->input('sort');
+        $pops->year = $request->input('year');
+        $pops->phase = $request->input('phase');
         $pops->image = $image;
         $pops->save();
         return redirect('/pops');
