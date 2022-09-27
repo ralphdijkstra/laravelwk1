@@ -25,7 +25,7 @@ class PopsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pops.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class PopsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pops::create($request->all());
     }
 
     /**

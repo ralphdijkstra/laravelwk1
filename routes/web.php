@@ -19,6 +19,7 @@ Route::get('/', function () {
 })->name('home');
 Route::resource('pops', PopsController::class, [
     'names' => [
-        'index' => 'pops'
+        'index' => 'pops',
+        'create' => 'popsCreate'
     ]
 ]);
