@@ -15,7 +15,14 @@
     <li>Sort: {{ $pop->sort }}</li>
     <li>Year: {{ $pop->year }}</li>
     <li>Phase: {{ $pop->phase }}</li>
-    <img width="512px" src="{{ asset('pop/' . $pop->image) }}" />
+    <a href="pops/{{ $pop->pop_id }}/edit">
+        <img width="512px" src="{{ asset('pop/' . $pop->image) }}" />
+    </a>
+    <form action="/pops/{{ $pop->pop_id }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button>Verwijder</button>
+    </form>
 </ul><br>
 @endforeach
 @endsection

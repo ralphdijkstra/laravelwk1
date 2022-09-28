@@ -16,10 +16,10 @@ class PopsController extends Controller
      */
     public function index()
     {
-        $pops = Pops::all();
+        $pops = Pops::orderBy("pop_number", "desc")->get();
         return view('pops.index', ['pops' => $pops]);
     }
- 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,28 +39,32 @@ class PopsController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'pop_id'=>'required',
-        // ]);
-        $pops = new Pops;
-        $pops->pop_number = $request->input('pop_number');
-        $pops->pop_name = $request->input('pop_name');
-        $pops->variant = $request->input('variant');
-        $pops->category = $request->input('category');
-        $pops->series = $request->input('series');
-        $pops->exclusive = $request->input('exclusive');
-        $pops->limited = $request->input('limited');
-        if(empty($request->input('variant'))){
-            $image = $request->input('pop_number') . " " . $request->input('pop_name') . ".jpg";
+        $series = Series::all();
+        foreach ($series as $serie) {
+            if ($serie->name == $request->input('series')) {
+                $selectedSerieYear = $serie->year;
+                $selectedSerieSort = $serie->id;
+                $selectedSeriePhase = $serie->phase;
+            }
         }
-        else {
+        if (empty($request->input('variant'))) {
+            $image = $request->input('pop_number') . " " . $request->input('pop_name') . ".jpg";
+        } else {
             $image = $request->input('pop_number') . " " . $request->input('pop_name') . " " . $request->input('variant') . ".jpg";
         }
-        $pops->sort = $request->input('sort');
-        $pops->year = $request->input('year');
-        $pops->phase = $request->input('phase');
-        $pops->image = $image;
-        $pops->save();
+        $pop = Pops::create([
+            'pop_number' => $request->input('pop_number'),
+            'pop_name' => $request->input('pop_name'),
+            'variant' => $request->input('variant'),
+            'category' => $request->input('category'),
+            'series' => $request->input('series'),
+            'exclusive' => $request->input('exclusive'),
+            'limited' => $request->input('limited'),
+            'sort' => $selectedSerieSort,
+            'year' => $selectedSerieYear,
+            'phase' => $selectedSeriePhase,
+            'image' => $image
+        ]);
         return redirect('/pops');
     }
 
@@ -81,9 +85,11 @@ class PopsController extends Controller
      * @param  \App\Models\Pops  $pops
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pops $pops)
+    public function edit($id)
     {
-        //
+        $series = Series::all();
+        $pop = Pops::where('pop_id', $id)->first();
+        return view('pops.edit', ['id' => $id, 'pop' => $pop, 'series' => $series]);
     }
 
     /**
@@ -93,9 +99,36 @@ class PopsController extends Controller
      * @param  \App\Models\Pops  $pops
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pops $pops)
+    public function update(Request $request, $id)
     {
-        //
+        $series = Series::all();
+        foreach ($series as $serie) {
+            if($serie->name == $request->input('series')) {
+                $selectedSerieYear = $serie->year;
+                $selectedSerieSort = $serie->id;
+                $selectedSeriePhase = $serie->phase;
+            }
+        }
+        if(empty($request->input('variant'))){
+            $image = $request->input('pop_number') . " " . $request->input('pop_name') . ".jpg";
+        }
+        else {
+            $image = $request->input('pop_number') . " " . $request->input('pop_name') . " " . $request->input('variant') . ".jpg";
+        }
+        $pops = Pops::where('pop_id', $id)->first();
+        $pops->pop_number = $request->input('pop_number');
+        $pops->pop_name = $request->input('pop_name');
+        $pops->variant = $request->input('variant');
+        $pops->category = $request->input('category');
+        $pops->series = $request->input('series');
+        $pops->exclusive = $request->input('exclusive');
+        $pops->limited = $request->input('limited');
+        $pops->sort = $selectedSerieSort;
+        $pops->year = $selectedSerieYear;
+        $pops->phase = $selectedSeriePhase;
+        $pops->image = $image;
+        $pops->update();
+        return redirect('/pops');
     }
 
     /**
@@ -104,8 +137,10 @@ class PopsController extends Controller
      * @param  \App\Models\Pops  $pops
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pops $pops)
+    public function destroy($id)
     {
-        //
+        $pops = Pops::where('pop_id', $id)->first();
+        $pops->delete();
+        return redirect('/pops');
     }
 }

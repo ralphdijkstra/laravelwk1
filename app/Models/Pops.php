@@ -9,4 +9,5 @@ class Pops extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $primaryKey = 'pop_id';
 }
