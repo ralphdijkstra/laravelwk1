@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 28 sep 2022 om 20:07
+-- Gegenereerd op: 28 sep 2022 om 21:21
 -- Serverversie: 5.7.36
 -- PHP-versie: 8.1.0
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `pops` (
   `updated_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`pop_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=595 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=608 DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pops`
@@ -582,11 +582,11 @@ INSERT INTO `pops` (`pop_id`, `pop_number`, `pop_name`, `variant`, `category`, `
 (529, 1123, 'Statue of Liberty', NULL, 'Marvel', '32', 'NYCC 2022', NULL, 2021, 32, 4, '1123 Statue of Liberty.jpg', '2022-09-27 17:32:19', '2022-09-27 17:32:19'),
 (530, 1117, 'Thor', 'GITD', 'Marvel', 'Avengers: Endgame', 'Chalice Exclusive', NULL, 2019, 22, 3, '1117 Thor GITD.jpg', '2022-09-27 17:42:33', '2022-09-27 17:42:33'),
 (531, 1117, 'Thor', 'GITD Chase', 'Marvel', 'Avengers: Endgame', 'NYCC 2022', NULL, 2019, 22, 3, '1117 Thor GITD Chase.jpg', '2022-09-27 17:44:35', '2022-09-27 17:44:35'),
-(532, 1128, 'Jennifer', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 37, 4, '1128 Jennifer.jpg', '2022-09-27 23:33:55', '2022-09-27 23:33:55'),
-(533, 1130, 'Hulk', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 37, 4, '1130 Hulk.jpg', '2022-09-27 23:39:30', '2022-09-27 23:39:30'),
-(534, 1129, 'Abomination', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 37, 4, '1129 Abomination.jpg', '2022-09-28 18:20:23', '2022-09-28 18:20:23'),
-(535, 1133, 'Nikki', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 37, 4, '1133 Nikki.jpg', '2022-09-28 18:30:12', '2022-09-28 18:30:12'),
-(536, 1131, 'Wong', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 37, 4, '1131 Wong.jpg', '2022-09-28 18:32:07', '2022-09-28 18:32:07'),
+(532, 1128, 'Jennifer', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1128 Jennifer.jpg', '2022-09-27 23:33:55', '2022-09-27 23:33:55'),
+(533, 1130, 'Hulk', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1130 Hulk.jpg', '2022-09-27 23:39:30', '2022-09-27 23:39:30'),
+(534, 1129, 'Abomination', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1129 Abomination.jpg', '2022-09-28 18:20:23', '2022-09-28 18:20:23'),
+(535, 1133, 'Nikki', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1133 Nikki.jpg', '2022-09-28 18:30:12', '2022-09-28 18:30:12'),
+(536, 1131, 'Wong', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1131 Wong.jpg', '2022-09-28 18:32:07', '2022-09-28 18:32:07'),
 (537, 1113, 'T\'Challa on the Throne', 'Deluxe', 'Marvel', 'Black Panther', 'Target', NULL, 2018, 18, 3, '1113 T\'Challa on the Throne Deluxe.jpg', '2022-09-28 18:32:38', '2022-09-28 18:32:38'),
 (538, 983, 'Frog of Thunder', NULL, 'Deluxe', 'Loki', 'Target', NULL, 2021, 26, 4, '983 Frog of Thunder.jpg', '2022-09-28 18:36:29', '2022-09-28 18:35:50'),
 (539, 1030, 'Sinister Strange', NULL, 'Marvel', 'Doctor Strange In The Multiverse of Madness', NULL, NULL, 2022, 34, 4, '1030 Sinister Strange.jpg', '2022-09-28 18:37:05', '2022-09-28 18:37:05'),
@@ -645,7 +645,20 @@ INSERT INTO `pops` (`pop_id`, `pop_number`, `pop_name`, `variant`, `category`, `
 (591, 1111, 'Ramonda', NULL, 'Marvel', 'Black Panther', 'Target', NULL, 2018, 18, 3, '1111 Ramonda.jpg', '2022-09-28 18:59:50', '2022-09-28 18:59:50'),
 (592, 1112, 'Shuri', NULL, 'Marvel', 'Black Panther', 'Target', NULL, 2018, 18, 3, '1112 Shuri.jpg', '2022-09-28 19:00:03', '2022-09-28 19:00:03'),
 (593, 876, 'Shuri', 'GITD', 'Marvel', 'Black Panther', 'Target', NULL, 2018, 18, 3, '876 Shuri GITD.jpg', '2022-09-28 19:00:33', '2022-09-28 19:00:33'),
-(594, NULL, 'Goat Boat with Thor, Toothgnasher and Toothgrinder', NULL, 'Rides', 'Thor: Love and Thunder', NULL, NULL, 2022, 36, 4, ' Goat Boat with Thor, Toothgnasher and Toothgrinder.jpg', '2022-09-28 19:10:23', '2022-09-28 19:01:10');
+(594, NULL, 'Goat Boat with Thor, Toothgnasher and Toothgrinder', NULL, 'Rides', 'Thor: Love and Thunder', NULL, NULL, 2022, 36, 4, ' Goat Boat with Thor, Toothgnasher and Toothgrinder.jpg', '2022-09-28 19:10:23', '2022-09-28 19:01:10'),
+(595, 1094, 'Namor', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1094 Namor.jpg', '2022-09-28 20:12:51', '2022-09-28 20:12:51'),
+(596, 1095, 'Ironheart Mk 1', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1095 Ironheart Mk 1.jpg', '2022-09-28 20:13:21', '2022-09-28 20:13:21'),
+(597, 1096, 'Attuma', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1096 Attuma.jpg', '2022-09-28 20:13:31', '2022-09-28 20:13:31'),
+(598, 1097, 'Namora', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1097 Namora.jpg', '2022-09-28 20:13:40', '2022-09-28 20:13:40'),
+(599, 1098, 'M\'Baku', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1098 M\'Baku.jpg', '2022-09-28 20:13:49', '2022-09-28 20:13:49'),
+(600, 1099, 'Queen Ramonda', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1099 Queen Ramonda.jpg', '2022-09-28 20:13:58', '2022-09-28 20:13:58'),
+(601, 1100, 'Okoye', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1100 Okoye.jpg', '2022-09-28 20:14:10', '2022-09-28 20:14:10'),
+(602, 1101, 'Nakia', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1101 Nakia.jpg', '2022-09-28 20:14:25', '2022-09-28 20:14:25'),
+(603, 1102, 'Black Panther', NULL, 'Marvel', 'Black Panther: Wakanda Forever', NULL, NULL, 2022, 39, 4, '1102 Black Panther.jpg', '2022-09-28 20:14:48', '2022-09-28 20:14:48'),
+(604, 1103, 'Shuri', NULL, 'Marvel', 'Black Panther: Wakanda Forever', 'Funko Shop', NULL, 2022, 39, 4, '1103 Shuri.jpg', '2022-09-28 20:14:59', '2022-09-28 20:14:59'),
+(605, 1115, 'Nick Fury', NULL, 'Marvel', 'Secret Invasion', 'NYCC 2022', NULL, 2023, 40, 5, '1115 Nick Fury.jpg', '2022-09-28 20:21:34', '2022-09-28 20:21:34'),
+(606, 1116, 'Groot', 'with Smartwatch', 'Marvel', 'I am Groot', 'NYCC 2022', NULL, 2022, 37, 4, '1116 Groot with Smartwatch.jpg', '2022-09-28 20:21:55', '2022-09-28 20:21:55'),
+(607, 1132, 'Titania', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 38, 4, '1132 Titania.jpg', '2022-09-28 20:35:49', '2022-09-28 20:35:49');
 
 -- --------------------------------------------------------
 
@@ -661,7 +674,7 @@ CREATE TABLE IF NOT EXISTS `series` (
   `phase` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `series`
@@ -704,7 +717,10 @@ INSERT INTO `series` (`id`, `name`, `year`, `phase`, `image`) VALUES
 (34, 'Doctor Strange In The Multiverse of Madness', 2022, 4, 'mom'),
 (35, 'Ms. Marvel', 2022, 4, 'msm'),
 (36, 'Thor: Love and Thunder', 2022, 4, 'thorlat'),
-(37, 'She Hulk', 2022, 4, 'shehulk');
+(37, 'I am Groot', 2022, 4, 'groot'),
+(38, 'She Hulk', 2022, 4, 'shehulk'),
+(39, 'Black Panther: Wakanda Forever', 2022, 4, 'wf'),
+(40, 'Secret Invasion', 2023, 5, 'si');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

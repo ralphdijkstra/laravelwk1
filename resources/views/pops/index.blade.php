@@ -5,7 +5,7 @@
 @section('content')
 <h1>Pops</h1>
 @foreach ($pops as $pop)
-<ul>
+<ul id="{{ $pop->pop_id }}">
     <li>Number: {{ $pop->pop_number }}</li>
     <li>Name: {{ $pop->pop_name }}</li>
     <li>Variant: {{ $pop->variant }}</li>

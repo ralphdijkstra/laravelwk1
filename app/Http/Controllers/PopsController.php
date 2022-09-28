@@ -16,7 +16,11 @@ class PopsController extends Controller
      */
     public function index()
     {
-        $pops = Pops::orderBy("pop_number", "desc")->get();
+        $pops = Pops::
+        where("sort", "22")
+        ->orderBy("sort")
+        ->orderBy("pop_number", "asc")
+        ->get();
         return view('pops.index', ['pops' => $pops]);
     }
 
