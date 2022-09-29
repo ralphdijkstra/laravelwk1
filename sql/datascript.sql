@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 28 sep 2022 om 21:21
+-- Gegenereerd op: 29 sep 2022 om 23:22
 -- Serverversie: 5.7.36
 -- PHP-versie: 8.1.0
 
@@ -579,14 +579,14 @@ INSERT INTO `pops` (`pop_id`, `pop_number`, `pop_name`, `variant`, `category`, `
 (526, 1008, 'Doctor Strange', 'Levitating', 'Marvel', 'Doctor Strange In The Multiverse of Madness', 'Funko Specialty Series', NULL, 2022, 34, 4, '1008 doctor strange Levitating.jpg', '2022-09-27 19:00:00', '2022-09-27 19:00:00'),
 (527, 984, 'Boastful Loki', NULL, 'Marvel', 'Loki', 'WonderCon 2022', NULL, 2021, 26, 4, '984 boastful loki.jpg', '2022-09-27 19:00:00', '2022-09-27 19:00:00'),
 (528, 999, 'Captain America with Prototype Shield', NULL, 'Marvel', 'Captain America: The First Avenger', 'Entertainment Earth', NULL, 2011, 5, 1, '999 captain america with prototype shield.jpg', '2022-09-27 19:00:00', '2022-09-27 19:00:00'),
-(529, 1123, 'Statue of Liberty', NULL, 'Marvel', '32', 'NYCC 2022', NULL, 2021, 32, 4, '1123 Statue of Liberty.jpg', '2022-09-27 17:32:19', '2022-09-27 17:32:19'),
+(529, 1123, 'Statue of Liberty', NULL, 'Marvel', 'Spider-Man: No Way Home', 'NYCC 2022', NULL, 2021, 32, 4, '1123 Statue of Liberty.jpg', '2022-09-29 23:12:46', '2022-09-27 17:32:19'),
 (530, 1117, 'Thor', 'GITD', 'Marvel', 'Avengers: Endgame', 'Chalice Exclusive', NULL, 2019, 22, 3, '1117 Thor GITD.jpg', '2022-09-27 17:42:33', '2022-09-27 17:42:33'),
 (531, 1117, 'Thor', 'GITD Chase', 'Marvel', 'Avengers: Endgame', 'NYCC 2022', NULL, 2019, 22, 3, '1117 Thor GITD Chase.jpg', '2022-09-27 17:44:35', '2022-09-27 17:44:35'),
-(532, 1128, 'Jennifer', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1128 Jennifer.jpg', '2022-09-27 23:33:55', '2022-09-27 23:33:55'),
-(533, 1130, 'Hulk', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1130 Hulk.jpg', '2022-09-27 23:39:30', '2022-09-27 23:39:30'),
-(534, 1129, 'Abomination', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1129 Abomination.jpg', '2022-09-28 18:20:23', '2022-09-28 18:20:23'),
-(535, 1133, 'Nikki', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1133 Nikki.jpg', '2022-09-28 18:30:12', '2022-09-28 18:30:12'),
-(536, 1131, 'Wong', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 39, 4, '1131 Wong.jpg', '2022-09-28 18:32:07', '2022-09-28 18:32:07'),
+(532, 1128, 'Jennifer', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 38, 4, '1128 Jennifer.jpg', '2022-09-27 23:33:55', '2022-09-27 23:33:55'),
+(533, 1130, 'Hulk', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 38, 4, '1130 Hulk.jpg', '2022-09-27 23:39:30', '2022-09-27 23:39:30'),
+(534, 1129, 'Abomination', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 38, 4, '1129 Abomination.jpg', '2022-09-28 18:20:23', '2022-09-28 18:20:23'),
+(535, 1133, 'Nikki', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 38, 4, '1133 Nikki.jpg', '2022-09-28 18:30:12', '2022-09-28 18:30:12'),
+(536, 1131, 'Wong', NULL, 'Marvel', 'She Hulk', NULL, NULL, 2022, 38, 4, '1131 Wong.jpg', '2022-09-29 23:12:05', '2022-09-28 18:32:07'),
 (537, 1113, 'T\'Challa on the Throne', 'Deluxe', 'Marvel', 'Black Panther', 'Target', NULL, 2018, 18, 3, '1113 T\'Challa on the Throne Deluxe.jpg', '2022-09-28 18:32:38', '2022-09-28 18:32:38'),
 (538, 983, 'Frog of Thunder', NULL, 'Deluxe', 'Loki', 'Target', NULL, 2021, 26, 4, '983 Frog of Thunder.jpg', '2022-09-28 18:36:29', '2022-09-28 18:35:50'),
 (539, 1030, 'Sinister Strange', NULL, 'Marvel', 'Doctor Strange In The Multiverse of Madness', NULL, NULL, 2022, 34, 4, '1030 Sinister Strange.jpg', '2022-09-28 18:37:05', '2022-09-28 18:37:05'),
