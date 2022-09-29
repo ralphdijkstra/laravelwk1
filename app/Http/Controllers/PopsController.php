@@ -16,9 +16,7 @@ class PopsController extends Controller
      */
     public function index()
     {
-        $pops = Pops::
-        where("sort", "22")
-        ->orderBy("sort")
+        $pops = Pops::orderBy("sort")
         ->orderBy("pop_number", "asc")
         ->get();
         return view('pops.index', ['pops' => $pops]);
@@ -78,9 +76,11 @@ class PopsController extends Controller
      * @param  \App\Models\Pops  $pops
      * @return \Illuminate\Http\Response
      */
-    public function show(Pops $pops)
+    public function show($id)
     {
-        //
+        $series = Series::all();
+        $pop = Pops::where('pop_id', $id)->first();
+        return view('pops.show', ['id' => $id, 'pop' => $pop, 'series' => $series]);
     }
 
     /**

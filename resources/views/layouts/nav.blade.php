@@ -10,4 +10,7 @@
             </li>
         </ul>
     </li>
+    <li>
+        <a href="{{ route('series') }}">Series</a>
+    </li>
 </ul>

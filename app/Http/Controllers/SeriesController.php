@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pops;
 use App\Models\Series;
 use Illuminate\Http\Request;
 
@@ -45,9 +46,11 @@ class SeriesController extends Controller
      * @param  \App\Models\Series  $series
      * @return \Illuminate\Http\Response
      */
-    public function show(Series $series)
+    public function show($id)
     {
-        //
+        $pops = Pops::where('sort', $id)->orderBy('pop_number')->orderBy('variant')->get();
+        $serie = Series::where('id', $id)->first();
+        return view('series.show', ['id' => $id, 'serie' => $serie, 'pops' => $pops]);
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PopsController;
+use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +22,10 @@ Route::resource('pops', PopsController::class, [
     'names' => [
         'index' => 'pops',
         'create' => 'popsCreate'
+    ]
+]);
+Route::resource('series', SeriesController::class, [
+    'names' => [
+        'index' => 'series'
     ]
 ]);
