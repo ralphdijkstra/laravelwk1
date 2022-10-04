@@ -3,26 +3,26 @@
 @section('title', 'Pops')
 
 @section('content')
-<h1>Pops</h1>
-@foreach ($pops as $pop)
-<ul id="{{ $pop->pop_id }}">
-    <li>Number: {{ $pop->pop_number }}</li>
-    <li>Name: {{ $pop->pop_name }}</li>
-    <li>Variant: {{ $pop->variant }}</li>
-    <li>Exclusive: {{ $pop->exclusive }}</li>
-    <li>Limited: {{ $pop->limited }}</li>
-    <li>Series: {{ $pop->series }}</li>
-    <li>Sort: {{ $pop->sort }}</li>
-    <li>Year: {{ $pop->year }}</li>
-    <li>Phase: {{ $pop->phase }}</li>
-    <a href="pops/{{ $pop->pop_id }}/edit">
-        <img width="512px" src="{{ asset('pop/' . $pop->image) }}" />
-    </a>
-    <form action="/pops/{{ $pop->pop_id }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button>Verwijder</button>
-    </form>
-</ul><br>
-@endforeach
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
+        @foreach ($pops as $pop)
+            <div class="p-4 grid place-items-end justify-items-center gap-2">
+                <div class="items-end"><img width="512px" src="{{ asset('pop/' . $pop->image) }}" /></div>
+                <div>
+                    <p>{{ $pop->pop_number }} {{ $pop->pop_name }}</p>
+                </div>
+                <div class="flex">
+                    <a class="mx-2" href="pops/{{ $pop->pop_id }}/edit">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                    </a>
+                    <form class="mx-2" action="/pops/{{ $pop->pop_id }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button
+                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                    </form>
+                </div>
+
+            </div>
+        @endforeach
+    </div>
 @endsection

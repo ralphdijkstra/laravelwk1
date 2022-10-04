@@ -2,7 +2,6 @@
 
 @section('title', 'Series')
 <style>
-
     .flex-container div {
         width: 400px;
         height: 225px;
@@ -41,8 +40,17 @@
     }
 </style>
 @section('content')
-    <div class="flex-container">
-        @foreach ($series as $serie)
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 w-11/12 m-auto my-10">
+            @foreach ($series as $serie)
+            <a href="series/{{ $serie->id }}">
+                <div style='margin:0px;background: url({{ asset('img/' . $serie->image . '.jpg') }});background-repeat: no-repeat;background-size: 100% 100%;'
+                    class="w-full h-[250px]">
+                </div>
+    </a>
+    @endforeach
+    </div>
+
+    {{-- @foreach ($series as $serie)
             <a href="series/{{ $serie->id }}">
                 <div
                     style='margin:0px;background: url({{ asset('img/' . $serie->image . '.jpg') }});background-repeat: no-repeat;background-size: 100% 100%;'>
@@ -51,7 +59,7 @@
                     </div>
                 </div>
             </a>
-        @endforeach
+        @endforeach --}}
     </div>
 
 @endsection
