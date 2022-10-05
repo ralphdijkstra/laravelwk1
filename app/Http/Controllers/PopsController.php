@@ -79,8 +79,9 @@ class PopsController extends Controller
     public function show($id)
     {
         $series = Series::all();
-        $pop = Pops::where('pop_id', $id)->first();
-        return view('pops.show', ['id' => $id, 'pop' => $pop, 'series' => $series]);
+        $pops = Pops::all();
+        $selectedpop = Pops::where('pop_id', $id)->first();
+        return view('pops.show', ['id' => $id, 'selectedpop' => $selectedpop, 'series' => $series, 'pops' => $pops]);
     }
 
     /**
